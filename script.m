@@ -72,6 +72,7 @@ function [class,score] = my_predictpca(mdl,data)
     score = zeros(r,1);
 
     for i = 1 : r
+    md = zeros(length(mdl.class),1);
         for j = 1 : length(mdl.class)
             md(j) = MahalanobisDistance(mdl.class(j),data(i,:));
         end
